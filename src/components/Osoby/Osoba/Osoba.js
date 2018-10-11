@@ -46,5 +46,5 @@ Osoba.propTypes = {
     zmenena: PropTypes.func
 }
 
-export default Osoba
+export default zklasou(Osoba, zKlas.Osoba)
 

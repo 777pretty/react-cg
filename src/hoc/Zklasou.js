@@ -3,7 +3,7 @@ import React from 'react'
 const zklasou = (ObalenyKomponent, nazovKlasy) => {
     return (props) => (
     <div className={nazovKlasy}>
-        <ObalenyKomponent {...props} />
+        <ObalenyKomponent ref={props.posunutaRef} {...props} />
     </div>
     )
 }
