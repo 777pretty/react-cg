@@ -3,11 +3,17 @@ import React, { Component } from 'react'
 import Osoba from './Osoba/Osoba'
 
 class Osoby extends Component {
+    constructor(props){
+      super(props)
+    this.poslednaOsobaRef = React.createRef()
+  }
+
     componentWillMount(){
         console.log('SCOOP SCOOP xx in component will mount')
       }
       componentDidMount(){
         console.log('scupity xx in component did mount')
+        this.poslednaOsobaRef.current.focus()
       }
       componentWillReceiveProps(nextProps){
         console.log('Lift YAZHURSELF xx in component will receive props', nextProps)
@@ -33,6 +39,7 @@ class Osoby extends Component {
         meno={g.meno} 
         lokacia={g.lokacia}
         key={g.id}
+        ref={this.poslednaOsobaRef}
         pozicia={index}
         zmenena={(event) => this.props.zmenena(event, g.id)}
         /> 

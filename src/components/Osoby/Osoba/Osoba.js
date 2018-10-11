@@ -6,12 +6,20 @@ import zklasou from '../../../hoc/zklasou'
 
 
 class Osoba extends Component {
+    constructor(props){
+        super(props)
+    this.inputtElementt = React.createRef()
+    }
 
     componentDidMount(){
         console.log( '[Osoba.js]SCOOB xx in component did mount' )
         if (this.props.pozicia === 0){
-        this.inputtElementt.focus()
+        this.inputtElementt.current.focus()
         }
+    }
+
+    focus(){
+        this.inputtElementt.current.focus();
     }
 
     render(){
@@ -22,7 +30,7 @@ class Osoba extends Component {
     <p onClick={this.props.clique}>Pochadzam z {this.props.lokacia}. A mam {Math.floor(Math.random()*100)} rokov lmao.</p>
     <h1>{this.props.children}</h1>
     <input type='text'
-           ref={(inpp)=>{ this.inputtElementt = inpp }} 
+           ref={this.inputtElementt} 
            onChange={this.props.zmenena} 
            value={this.props.meno} />
     </Fragment>
@@ -38,5 +46,5 @@ Osoba.propTypes = {
     zmenena: PropTypes.func
 }
 
-export default zklasou(Osoba, zKlas.Osoba)
+export default Osoba
 
