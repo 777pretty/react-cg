@@ -39,7 +39,7 @@ class Osoby extends Component {
         meno={g.meno} 
         lokacia={g.lokacia}
         key={g.id}
-        posunutaRef={this.poslednaOsobaRef}
+        ref={this.poslednaOsobaRef}
         pozicia={index}
         zmenena={(event) => this.props.zmenena(event, g.id)}
         /> 

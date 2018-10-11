@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 const zklasou = (ObalenyKomponent, nazovKlasy) => {
-    const ZKlasou = class extends Component {
+    const Zklasou = class extends Component {
     render(){
         return(
          <div className={nazovKlasy}>
@@ -10,9 +10,10 @@ const zklasou = (ObalenyKomponent, nazovKlasy) => {
     )
     }
 }
-    return React.posunutaRef((props, ref) => {
-        return <ZKlasou {...props} posunutaRef={ref} />
+    return React.forwardRef((props, ref) => {
+        return <Zklasou {...props} posunutaRef={ref} />
     })
 }
+
 
 export default zklasou

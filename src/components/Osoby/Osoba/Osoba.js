@@ -40,7 +40,7 @@ class Osoba extends Component {
 
 
 Osoba.propTypes = {
-    cliquek: PropTypes.func,
+    clique: PropTypes.func,
     meno: PropTypes.string,
     lokacia: PropTypes.string,
     zmenena: PropTypes.func
