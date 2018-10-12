@@ -94,7 +94,7 @@ class App extends PureComponent {
       osDis = (
         <Osoby osoby={this.state.osoby} 
                clique={this.zmazOsobaHandler} 
-               zmenena={this.zmen}
+               zmenena={this.zmen}/>
       )
     }
 
