@@ -31,6 +31,14 @@ class App extends PureComponent {
   componentWillUpdate(nextProps, nextState){
     console.log('DADADA DA DA xx component will update', nextProps, nextState)
   }
+
+  static getDerivedStateFromProps(nextProps, prevState){
+    console.log(
+      '[UPD App.js] SSSSSS xx in get derived state from props', nextProps, prevState
+    )
+    return prevState
+  }
+
   componentDidUpdate(prevProps, prevState){
     console.log('da da xx component did update', prevProps, prevState)
   }
