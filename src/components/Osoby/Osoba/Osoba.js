@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import zKlas from './Osoba.css'
 import zklasou from '../../../hoc/zklasou'
+import { overKontext } from '../../../containers/App'
 
 
 class Osoba extends Component {
@@ -26,11 +27,13 @@ class Osoba extends Component {
     
     return (
     <Fragment>
-    {this.props.overeny ?
-        <h1>'OVERENIE USPESNE'</h1>
+        <overKontext.Consumer>
+    {auth => auth ?
+        <h6>'OVERENIE USPESNE'</h6>
         :
-        <h1>'OVERENIE ZATIAL NEUSPESNE'</h1>
+        <h6>'OVERENIE ZATIAL NEUSPESNE'</h6>
     }
+        </overKontext.Consumer>
     
     <h4>Moje meno je {this.props.meno}.</h4>
     <p onClick={this.props.clique}>Pochadzam z {this.props.lokacia}. A mam {Math.floor(Math.random()*100)} rokov lmao.</p>

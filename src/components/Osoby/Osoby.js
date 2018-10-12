@@ -42,7 +42,6 @@ class Osoby extends Component {
         ref={this.poslednaOsobaRef}
         pozicia={index}
         zmenena={(event) => this.props.zmenena(event, g.id)}
-        overeny={this.props.jeOvereny}
         /> 
 }) } 
 }

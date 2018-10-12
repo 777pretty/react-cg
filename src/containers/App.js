@@ -8,6 +8,8 @@ import zklasou from '../hoc/zklasou'
 
 
 
+export const overKontext = React.createContext(false) //false value is optional 
+
 class App extends PureComponent {
   constructor(props){
     super(props)
@@ -93,7 +95,6 @@ class App extends PureComponent {
         <Osoby osoby={this.state.osoby} 
                clique={this.zmazOsobaHandler} 
                zmenena={this.zmen}
-               jeOvereny={this.state.overeny}/>
       )
     }
 
@@ -105,7 +106,8 @@ class App extends PureComponent {
                  buttonKlik={this.togglniOsobaHandler}
                  login={this.loginHandler}
                  />
-        {osDis}
+        <overKontext.Provider value={this.state.overeny}>{osDis}</overKontext.Provider>
+        
      </Aukz>
     )
   }
