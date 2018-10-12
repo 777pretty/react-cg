@@ -41,7 +41,8 @@ class App extends PureComponent {
     ],
     
     ukazOsoby: false,
-    togglKliknuty: 0
+    togglKliknuty: 0,
+    overeny: false
   }
 
 
@@ -76,6 +77,12 @@ class App extends PureComponent {
     this.setState({osoby: osoby})
   }
 
+  loginHandler = () => {
+    this.setState({
+      overeny: true
+    })
+  }
+
   render() {
     console.log('doot doot xx inside render ')
 
@@ -85,7 +92,8 @@ class App extends PureComponent {
       osDis = (
         <Osoby osoby={this.state.osoby} 
                clique={this.zmazOsobaHandler} 
-               zmenena={this.zmen}/>
+               zmenena={this.zmen}
+               jeOvereny={this.state.overeny}/>
       )
     }
 
@@ -94,7 +102,9 @@ class App extends PureComponent {
         <button onClick={()=>{this.setState({ukazOsoby: true})}}>Ukaz osoby</button>
         <Cockpit ukazOsoby={this.state.ukazOsoby} 
                  osoby={this.state.osoby} 
-                 buttonKlik={this.togglniOsobaHandler}/>
+                 buttonKlik={this.togglniOsobaHandler}
+                 login={this.loginHandler}
+                 />
         {osDis}
      </Aukz>
     )

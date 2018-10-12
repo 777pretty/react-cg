@@ -24,7 +24,7 @@ const cockpit = (props) => {
         <button className={buttonKlas} onClick={props.buttonKlik} >Stlac!</button>
         <br />
         <br />
-        {/* <button */}
+        <button onClick={props.login}>LOG ME IN!</button>
     </Fragment>
     )
 }

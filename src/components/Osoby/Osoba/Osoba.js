@@ -26,6 +26,12 @@ class Osoba extends Component {
     
     return (
     <Fragment>
+    {this.props.overeny ?
+        <h1>'OVERENIE USPESNE'</h1>
+        :
+        <h1>'OVERENIE ZATIAL NEUSPESNE'</h1>
+    }
+    
     <h4>Moje meno je {this.props.meno}.</h4>
     <p onClick={this.props.clique}>Pochadzam z {this.props.lokacia}. A mam {Math.floor(Math.random()*100)} rokov lmao.</p>
     <h1>{this.props.children}</h1>
