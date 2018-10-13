@@ -41,8 +41,9 @@ class App extends PureComponent {
 
   getSnapshotBeforeUpdate(){
     console.log(
-      '[UPD App.js] SCNAPSHOTSCOOPSHOT xx in get snapshot before update', nextProps, prevState
+      '[UPD App.js] SCNAPSHOTSCOOPSHOT xx in get snapshot before update'
     )
+    return null
   }
 
   componentDidUpdate(prevProps, prevState){
